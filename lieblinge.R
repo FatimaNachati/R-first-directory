@@ -10,3 +10,12 @@ data <- data.frame(
 
 #CSV-Datei speichern
 write.csv(data, "lieblinge.csv", row.names = FALSE)
+
+#Beispielcode zum Einlesen der lieblinge.csv-Datei
+lieblinge <- read.csv("C:/Users/fatin/Documents/lieblinge.csv")
+
+summary(lieblinge)
+
+library(ggplot2)
+ggplot(lieblinge, aes(x = Alter, y = Lieblingsfarbe, color = Lieblingstier)) +
+       geom_point() + labs(title = "Visualisierung der Lieblingsdaten")
